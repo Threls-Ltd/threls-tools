@@ -10,6 +10,7 @@
     <x-slot name="form">
         <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
             <!-- Profile Photo File Input -->
+
             <input type="file" class="hidden"
                    wire:model="image"
                    x-ref="photo"
@@ -22,10 +23,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             "/>
 
-            <x-jet-label for="photo" value="{{ __('Photo') }}"/>
 
-
-            <!-- New Profile Photo Preview -->
             <div class="mt-2" x-show="photoPreview" style="display: none;">
                     <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
                           x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
@@ -33,12 +31,12 @@
             </div>
 
             <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                {{ __('Select A New Photo') }}
+                {{ __('Select A New Image') }}
             </x-jet-secondary-button>
 
-            @error('photo') <span class="error">{{ $message }}</span> @enderror
+            @error('image') <span class="error">{{ $message }}</span> @enderror
 
-            <x-jet-input-error for="photo" class="mt-2"/>
+            <x-jet-input-error for="image" class="mt-2"/>
         </div>
 
 
@@ -48,7 +46,7 @@
             {{ __('Saved.') }}
         </x-jet-action-message>
 
-        <x-jet-button wire:loading.attr="disabled" wire:target="photo">
+        <x-jet-button wire:loading.attr="disabled" wire:target="image">
             {{ __('Save') }}
         </x-jet-button>
     </x-slot>

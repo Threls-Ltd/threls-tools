@@ -19,7 +19,7 @@ Route::middleware([])
         $router->get('/', fn() => view('dashboard'))
             ->name('dashboard');
 
-        $router->get('/responsive-images', fn() => view('responsiveimages'))
+        $router->get('/responsive-images-generator', fn() => view('responsiveimages'))
             ->name('responsive-images');
     });
 
