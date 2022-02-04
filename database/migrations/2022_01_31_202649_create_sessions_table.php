@@ -13,6 +13,8 @@ class CreateSessionsTable extends Migration
      */
     public function up()
     {
+        DB::statement('SET SESSION sql_require_primary_key=0');
+
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -21,6 +23,9 @@ class CreateSessionsTable extends Migration
             $table->text('payload');
             $table->integer('last_activity')->index();
         });
+
+        DB::statement('SET SESSION sql_require_primary_key=0');
+
     }
 
     /**
