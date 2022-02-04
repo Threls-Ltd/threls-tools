@@ -3,6 +3,9 @@
         <x-jet-application-logo class="block h-12 w-auto" />
     </div>
 
+
+    <a href="https://github.com/Threls-Ltd/threls-tools" target="_blank">Github repository</a>
+
     <div class="mt-8 text-2xl">
         Welcome to your Jetstream application!
     </div>

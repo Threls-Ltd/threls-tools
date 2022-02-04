@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware([])
-    ->get('/', function () {
-        return view('dashboard');
-    })
-    ->name('dashboard');
+    ->group(function (Router $router) {
+        $router->get('/', fn() => view('dashboard'))
+            ->name('dashboard');
+
+        $router->get('/responsive-images', fn() => view('responsiveimages'))
+            ->name('responsive-images');
+    });
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/auth', function () {
         return view('dashboard');
-    })
-    ;
+    });
