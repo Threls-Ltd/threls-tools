@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Flare;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Flare::determineVersionUsing(function () {
+            return config('app.version');
+        });
     }
 }
