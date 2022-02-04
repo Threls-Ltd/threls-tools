@@ -4,7 +4,19 @@
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Generate responsive images.') }}
+        <p class="mt-4">Since users of your website may be using a variety of devices which differ widely. Websites are
+            viewable on
+            different screen sizes and resolutions. Usually, what we did was to load the same image on all
+            the devices.
+        </p>
+        <p class="mt-4">A better solution is to serve different images to different visitors. We want to serve a
+            high-resolution
+            image to the visitors using a 4K 32" monitor but ideally we search a much smaller image to users using a 5"
+            mobile device.</p>
+
+        <p class="mt-4">Behind the hood, this tool is using <a
+                href="https://spatie.be/docs/laravel-medialibrary/v9/introduction" class="underline" target="_blank">this amazing
+                package</a> by Spatie</p>
     </x-slot>
 
     <x-slot name="form">
